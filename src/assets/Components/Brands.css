@@ -1,0 +1,41 @@
+.brand-container{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    margin-top: -10rem;
+}
+.strip-top, .strip-bottom{
+    position: absolute;
+    left: 50%;
+    width: 180%;
+    height: 90px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.strip-top{
+    top:50%;
+    transform: translateX(-50%) rotate(-10deg);
+    z-index: 2;
+}
+.strip-bottom{
+    top:50%;
+    transform: translateX(-50%) rotate(10deg);
+    z-index: 1;
+}
+.strip-top ul, .strip-bottom ul{
+    display: flex;
+    gap: 250px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.strip-top li, .strip-bottom li{
+    display: flex;
+    opacity: 0.95;
+    letter-spacing: 0.5px;
+}

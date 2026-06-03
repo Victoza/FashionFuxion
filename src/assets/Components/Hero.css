@@ -1,0 +1,20 @@
+.hero_container{
+    height: 120vh;
+    display: grid;
+    place-items: center;
+}
+.hero_content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.hero_content h1{
+    font-size: 12rem;
+}
+.hero_content .hero_img{
+    width: 1000px;
+    height: 840px;
+    object-fit: contain;
+    margin-top: -12rem;
+    align-self: center;
+}

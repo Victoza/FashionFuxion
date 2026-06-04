@@ -15,7 +15,8 @@ const Hero1 = () => {
     return () => clearInterval(interval);
   }, [images.length]);
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#f3f3f3]">
+ <section className="relative w-full h-screen overflow-hidden bg-[radial-gradient(circle,_#fafafa_0%,_#e5e5e5_40%,_#b3b3b3_80%)]">
+      
 
       {/* TOP NAVBAR */}
       <nav className="absolute top-0 left-0 w-full flex items-center justify-between px-14 py-8 z-50">
@@ -41,7 +42,7 @@ const Hero1 = () => {
       </nav>
 
       {/* BACKGROUND HUGE TEXT */}
-      <h1 className="absolute top-10 left-6 text-[190px] font-black uppercase text-gray-200 opacity-40 tracking-tight z-0 whitespace-nowrap">
+      <h1 className="absolute top-10 left-6 text-[190px] font-black uppercase text-gray-500 opacity-40 tracking-tight z-0 whitespace-nowrap">
         FOR MEN
       </h1>
 
@@ -75,7 +76,7 @@ const Hero1 = () => {
       </div>
 
       {/* SHOP NOW BUTTON */}
-      <button className="absolute left-8 top-[58%] border border-white px-12 py-3 uppercase tracking-[3px] z-40 text-white hover:bg-white hover:text-black transition-all duration-300">
+      <button className="absolute left-8 top-[58%] border cursor-pointer border-white px-12 py-3 uppercase tracking-[3px] z-40 text-white hover:bg-white hover:text-black transition-all duration-300">
         Shop now
       </button>
 

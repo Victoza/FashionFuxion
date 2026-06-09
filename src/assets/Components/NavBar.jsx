@@ -1,66 +1,70 @@
-import React, { useContext, useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { FaOpencart } from "react-icons/fa6";
-import { ShopContext } from './ShopContext';
-import { CiSearch } from "react-icons/ci";
-import { IoBagOutline } from "react-icons/io5";
-import { CiUser } from "react-icons/ci";;
-
+import { ShopContext } from "./ShopContext";
+import { CiSearch, CiUser } from "react-icons/ci";
 
 const NavBar = () => {
-  const {quantity} = useContext(ShopContext)
-
+  const { quantity } = useContext(ShopContext);
 
   return (
-    // <div>
-    //   <div className={`flex justify-between items-center p-4 sticky top-0 z-50 transition-colors duration-300 bg-gray-300`}>
-    //     <div>
-    //       <ul className='flex justify-between gap-4'>
-    //         <li>HOME</li>
-    //         <li>CLOTHES </li>
-    //       </ul>
-    //     </div>
-    //     <div>
-    //       <Link to='/'>
-    //       <h2 className='text-3xl font-bold text-gray-800'>FASHION FUXION</h2>
-    //       </Link>
-    //     </div>
-    //     <div>
-    //     <Link to='/cart'>
-    //     <div className='flex gap-2 bg-gray-500 rounded-4xl p-4'>
-    //       <FaOpencart size={32}/><p>{quantity}</p>
-    //     </div>
-    //     </Link>
-    //     </div>
-    //   </div>
-    // </div>
-    <div className="flex justify-between items-center px-4 bg-black text-white h-20">
-      <div className="flex justify-between items-center">
-        <h2 className="text-4xl font-bold">Fashion Fuxion</h2>
-        <ul className="flex ml-10">
-          <li className="ml-4">Collections</li>
-          <li className="ml-4">New Arrivals</li>
-          <li className="ml-4">Sales</li>
-          <li className="ml-4">About</li>
-        </ul>
-      </div>
-      <div className="flex items-center cursor-pointer">
-        <div className="bg-transparent size-12 flex justify-center border-white border pl-3 mr-4 items-center rounded-full">
-          <CiSearch size={24} className="mr-4"/>
-        </div>
-        <Link to='/cart'>
-          <div className="bg-transparent size-12 flex justify-center border-white border mr-4 items-center rounded-full">
-            <FaOpencart size={24} className="mr-4"/>
-            <p className=''>{quantity}</p>
-          </div>
-        </Link>
-        <div className="bg-transparent size-12 flex justify-center border-white border pl-3 mr-4 items-center rounded-full">
-          <CiUser size={24} className="mr-4"/>
-        </div>
-        
-      </div>
-    </div>
-  )
-}
+    <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-gray-800 text-white">
+      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
 
-export default NavBar
+        {/* Logo */}
+        <Link to="/">
+          <h2 className="text-3xl font-extrabold tracking-wider cursor-pointer">
+            Fashion
+            <span className="text-gray-400">FuXion</span>
+          </h2>
+        </Link>
+
+        {/* Navigation Links */}
+        <ul className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-medium">
+          <li className="cursor-pointer hover:text-gray-300 transition duration-300">
+            Collections
+          </li>
+          <li className="cursor-pointer hover:text-gray-300 transition duration-300">
+            New Arrivals
+          </li>
+          <li className="cursor-pointer hover:text-gray-300 transition duration-300">
+            Sales
+          </li>
+          <li className="cursor-pointer hover:text-gray-300 transition duration-300">
+            About
+          </li>
+        </ul>
+
+        {/* Icons */}
+        <div className="flex items-center gap-4">
+
+          {/* Search */}
+          <button className="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center hover:border-white hover:scale-105 transition duration-300">
+            <CiSearch size={24} />
+          </button>
+
+          {/* Cart */}
+          <Link to="/cart">
+            <div className="relative w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center hover:border-white hover:scale-105 transition duration-300">
+
+              <FaOpencart size={22} />
+
+              {quantity > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold min-w-[20px] h-5 px-1 rounded-full flex items-center justify-center">
+                  {quantity}
+                </span>
+              )}
+            </div>
+          </Link>
+
+          {/* User */}
+          <button className="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center hover:border-white hover:scale-105 transition duration-300">
+            <CiUser size={24} />
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default NavBar;

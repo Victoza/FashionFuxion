@@ -1,67 +1,88 @@
-import React, { useContext } from 'react'
-import { ShopContext } from '../assets/Components/ShopContext'
-import { FaTrashCan } from 'react-icons/fa6'
+import React, { useContext } from "react";
+import { ShopContext } from "../assets/Components/ShopContext";
+import { FaTrashCan } from "react-icons/fa6";
 
 const CartDetails = ({ item }) => {
-  const { removeFromCart, increaseQuantity, decreaseQuantity } =
-    useContext(ShopContext)
+  const {
+    removeFromCart,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useContext(ShopContext);
 
-  const { id, name, image, price, amount } = item
+  const {
+    id,
+    name,
+    image,
+    price,
+    amount,
+  } = item;
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 mb-6">
-      <div className="flex items-center justify-between gap-8">
+    <div className="grid grid-cols-4 items-center py-6 border-b">
 
-        <div className="product-detail flex items-center gap-5">
-          <img
-            src={image}
-            alt=""
-            className="w-32 h-40 object-cover rounded-xl"
-          />
+      {/* PRODUCT */}
+      <div className="flex items-center gap-4">
 
-          <div className="product-info flex flex-col gap-3">
-            <h3 className="text-xl font-semibold text-gray-800">
-              {name}
-            </h3>
+        <img
+          src={image}
+          alt={name}
+          className="w-20 h-20 rounded-xl object-cover"
+        />
 
-            <FaTrashCan
-              onClick={() => removeFromCart(id)}
-              className="text-red-500 text-xl cursor-pointer hover:text-red-700 transition"
-            />
-          </div>
+        <div>
+          <h3 className="font-semibold">
+            {name}
+          </h3>
+
+          <p className="text-sm text-gray-500">
+            Product Item
+          </p>
         </div>
 
-        <div className="quantity flex items-center gap-4 border border-gray-300 rounded-full px-4 py-2">
+      </div>
+
+      {/* QUANTITY */}
+      <div className="flex justify-center">
+
+        <div className="flex items-center border rounded-full px-4 py-2 gap-4">
+
           <button
             onClick={() => decreaseQuantity(id)}
-            className="text-lg font-bold hover:text-red-500 transition"
+            className="font-bold"
           >
             -
           </button>
 
-          <span className="font-semibold text-lg">
-            {amount}
-          </span>
+          <span>{amount}</span>
 
           <button
             onClick={() => increaseQuantity(id)}
-            className="text-lg font-bold hover:text-green-500 transition"
+            className="font-bold"
           >
             +
           </button>
-        </div>
 
-        <div className="price text-lg font-medium text-gray-700">
-          ${price}
-        </div>
-
-        <div className="total text-xl font-bold text-green-600">
-          ${(price * amount).toFixed(2)}
         </div>
 
       </div>
-    </div>
-  )
-}
 
-export default CartDetails
+      {/* TOTAL */}
+      <div className="text-center font-semibold">
+        ${(price * amount).toFixed(2)}
+      </div>
+
+      {/* ACTION */}
+      <div className="flex justify-center">
+
+        <FaTrashCan
+          onClick={() => removeFromCart(id)}
+          className="cursor-pointer hover:text-red-500"
+        />
+
+      </div>
+
+    </div>
+  );
+};
+
+export default CartDetails;

@@ -34,9 +34,9 @@ const Hero1 = () => {
           <i className="bx bxl-facebook text-xl cursor-pointer text-white"></i>
 
           {/* MENU */}
-          <button className="bg-black text-white w-10 h-10 flex items-center justify-center text-xl">
+          {/* <button className="bg-black text-white w-10 h-10 flex items-center justify-center text-xl">
             =
-          </button>
+          </button> */}
 
         </div>
       </nav>
@@ -76,9 +76,9 @@ const Hero1 = () => {
       </div>
 
       {/* SHOP NOW BUTTON */}
-      <button className="absolute left-8 top-[58%] border cursor-pointer border-white px-12 py-3 uppercase tracking-[3px] z-40 text-white hover:bg-white hover:text-black transition-all duration-300">
+      {/* <button className="absolute left-8 top-[58%] border cursor-pointer border-white px-12 py-3 uppercase tracking-[3px] z-40 text-white hover:bg-white hover:text-black transition-all duration-300">
         Shop now
-      </button>
+      </button> */}
 
       {/* RIGHT INDICATOR */}
       <div className="absolute right-10 top-1/2 -translate-y-1/2 flex flex-col items-center z-40">

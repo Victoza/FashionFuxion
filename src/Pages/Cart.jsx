@@ -39,7 +39,7 @@ const Cart = () => {
           )}
 
           <button
-            onClick={clearCart}
+            
             className="mt-6 bg-black text-white px-8 py-3 rounded-full hover:opacity-90"
           >
             Update Cart

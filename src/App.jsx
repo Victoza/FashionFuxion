@@ -9,6 +9,7 @@ import HomePage from './Pages/HomePage'
 import Cart from './Pages/Cart'
 import ProductDetail from './Pages/ProductDetail'
 import Hero1 from './assets/Components/Hero1'
+import Footer1 from './assets/Components/Footer1'
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
      </Routes>
     
       <Footer/>
+      <Footer1/>
       <ToastContainer />
     </>
   )
